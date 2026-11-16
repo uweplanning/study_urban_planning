@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studying urban planning - an applicant toolkit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#eef1f0; --card:#ffffff; --ink:#16292f; --muted:#5f6f73;
+  --line:#d6ddda; --line-soft:#e6ebe9;
+  --core:#0d6e6e; --core-soft:#d7e8e6;
+  --des:#b4780f; --des-soft:#f2e6cd;
+  --app:#c0396b; --app-soft:#f4dbe4;
+  --plan:#e8efee; --plan-line:#c7d6d2;
+  --gold:#d99a1e; --sub:#4f8fa6;
+  --sh:0 1px 2px rgba(22,41,47,.06),0 4px 16px rgba(22,41,47,.05);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding:30px 24px 60px}
+a{color:var(--core)}
+:focus-visible{outline:2px solid var(--core);outline-offset:2px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+h1{font-family:Spectral,serif;font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.08;letter-spacing:-.01em;margin:0 0 10px}
+h2{font-family:Spectral,serif;font-weight:600;font-size:26px;line-height:1.15;margin:0 0 8px;letter-spacing:-.01em}
+h3{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:26px 0 10px;font-weight:500}
+.lede{max-width:70ch;color:var(--muted);margin:0 0 18px;font-size:15.5px}
+.lede b{color:var(--ink);font-weight:600}
+/* main tabs */
+.maintabs{position:sticky;top:0;z-index:30;background:var(--paper);display:flex;gap:6px;flex-wrap:wrap;padding:10px 0 0;border-bottom:2px solid var(--line);margin:18px 0 26px}
+.maintabs button{border:0;background:none;cursor:pointer;font:600 15px Inter;color:var(--muted);padding:10px 16px 12px;border-bottom:3px solid transparent;margin-bottom:-2px;display:flex;align-items:center;gap:9px;text-align:left}
+.maintabs button .n{font-family:"IBM Plex Mono",monospace;font-size:11px;width:22px;height:22px;border-radius:50%;display:inline-grid;place-items:center;background:var(--line-soft);color:var(--muted)}
+.maintabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--core)}
+.maintabs button[aria-selected=true] .n{background:var(--core);color:#fff}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh)}
+.pad{padding:24px 26px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 13px Inter;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:9px;padding:9px 14px;cursor:pointer;box-shadow:var(--sh)}
+.btn:hover{border-color:var(--core);color:var(--core)}
+.field{position:relative;min-width:230px}
+.field select,.field input{width:100%;font:14px Inter;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:9px;padding:10px 12px;box-shadow:var(--sh);appearance:none}
+.field select{padding-right:34px;cursor:pointer}
+.field.sel::after{content:"";position:absolute;right:14px;bottom:17px;width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);pointer-events:none}
+.lbl{display:flex;flex-direction:column;gap:5px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
+.footnote{font-size:12.5px;color:var(--muted);margin:20px 2px 0;max-width:80ch;line-height:1.6}
+.credit{text-align:center;font-size:12px;color:var(--muted);margin:40px 0 0}
+
+/* ---------- Tab 1: curriculum ---------- */
+.ovt{border-collapse:collapse;width:100%;font-size:14.5px}
+.ovt th{font-weight:600;text-align:left;color:var(--muted);padding:10px 10px;border-bottom:2px solid var(--line);font-size:13px;vertical-align:bottom}
+.ovt th.uni{color:var(--core)}
+.ovt td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.ovt td:first-child{width:13%}.ovt td:nth-child(2){width:33%}.ovt td:nth-child(3){width:22%}
+.ovt td.uni{background:#f3f8f7}
+.ovpts,.unilist{list-style:none;margin:0;padding:0}
+.ovpts li{padding:2px 0}
+.unilist li{padding:3px 0 6px}
+.unilist b{color:var(--core);font-weight:600}
+.code{display:inline-block;padding:0 5px;border-radius:4px;border:1px solid var(--line);font:500 12px "IBM Plex Mono",monospace;margin:0 4px 2px 0;background:var(--card);white-space:nowrap}
+.code.geo{border-color:var(--core);color:var(--core);font-weight:600}
+.code.t{border-color:var(--des);color:var(--des)}
+.scrollx{overflow-x:auto}
+.notes{margin:0;padding-left:20px;font-size:14px;color:var(--muted)}
+.notes li{margin-bottom:5px}
+.conv p{margin:0 0 6px;font-size:14px}
+
+/* ---------- Tab 2: avatars ---------- */
+.strip{display:flex;gap:10px;overflow-x:auto;padding:6px 4px 14px;scroll-snap-type:x proximity}
+.avbtn{flex:1 0 98px;min-width:98px;max-width:124px;border:2px solid transparent;background:none;border-radius:16px;padding:8px 4px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;scroll-snap-align:start;font:inherit;color:inherit;transition:transform .15s,border-color .15s,background .15s}
+.avbtn:hover{transform:translateY(-3px);background:#fff}
+.avbtn[aria-pressed=true]{border-color:var(--core);background:#fff;box-shadow:var(--sh)}
+.avbtn svg{width:84px;height:84px;display:block}
+.avbtn .nm{font-size:12.5px;font-weight:600;line-height:1.2;text-align:center}
+.avbtn .pl{font:500 10px "IBM Plex Mono",monospace;color:var(--muted);letter-spacing:.06em}
+@media(prefers-reduced-motion:reduce){.avbtn{transition:none}.avbtn:hover{transform:none}}
+.hintbar{font-size:13.5px;color:var(--muted);margin:2px 4px 0}
+.profile{display:grid;grid-template-columns:170px 1fr;gap:26px;align-items:center;padding:24px 26px;border-bottom:1px solid var(--line)}
+.profile svg{width:170px;height:170px;display:block}
+.profile h2{font-size:30px;margin-bottom:4px}
+.profile .tag{font-size:17px;color:var(--ink);margin:0 0 10px}
+.profile .desc{color:var(--muted);margin:0 0 12px;max-width:62ch}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:999px;background:var(--core-soft);color:var(--core);margin:0 6px 6px 0}
+.pill.path{background:var(--des-soft);color:#8a5a08}
+@media(max-width:640px){.profile{grid-template-columns:1fr}.profile svg{width:130px;height:130px}}
+.mapgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px;padding:22px 26px 26px}
+.mcard{border:1px solid var(--line);border-radius:12px;padding:16px 18px;border-left:5px solid var(--core);background:#fbfdfc}
+.mcard .sb{display:inline-block;font-size:12.5px;font-weight:600;background:#e4eff3;color:#2e6b80;padding:3px 10px;border-radius:6px;margin-bottom:10px}
+.mcard .st{font:500 10.5px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:8px 0 3px}
+.mcard p{margin:0;font-size:14px}
+.mcard .why{background:var(--des-soft);border-radius:7px;padding:8px 10px;color:#6f4a06}
+.cardhead{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 26px 0;flex-wrap:wrap}
+.cardhead .count{font-size:13.5px;color:var(--muted)}
+.sectitle{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:38px 0 12px}
+.sectitle h2{margin:0}
+.wheel-layout{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;padding:22px 26px 26px}
+.wheel-col{flex:1 1 440px;min-width:300px;max-width:640px;position:relative}
+.wheel-side{flex:1 1 280px;min-width:260px}
+#wheelSvg{width:100%;height:auto;display:block}
+.zoom{position:absolute;top:4px;right:4px;display:flex;flex-direction:column;gap:6px;align-items:center;z-index:2}
+.zoom button{width:36px;height:36px;border:1px solid var(--line);background:#fff;border-radius:8px;font-size:17px;font-weight:700;cursor:pointer;color:var(--core);box-shadow:var(--sh)}
+.zoom span{font:500 11px "IBM Plex Mono",monospace;color:var(--muted)}
+.wseg{cursor:pointer;transition:opacity .2s}
+.wseg.dim{opacity:.18}
+.wlabel{font:600 11px Inter;fill:#fff;pointer-events:none;transition:opacity .2s}
+.wname{font:600 11.5px Inter;fill:#fff;pointer-events:none;transition:opacity .2s}
+.dim-l{opacity:.15}
+.wline{stroke:var(--gold);stroke-width:1.8;fill:none;opacity:.8;pointer-events:none}
+.winst{background:var(--paper);border-left:4px solid var(--core);border-radius:8px;padding:14px 16px;font-size:14px;color:var(--muted);margin-bottom:18px}
+.winst b{color:var(--ink)}
+.winst .gold{color:#a8720c;font-weight:700}
+.wi-title{font-weight:600;margin:18px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 6px;border-radius:999px;font-size:13px;font-weight:600;background:var(--core-soft);color:var(--core);border:0;cursor:pointer;font-family:Inter}
+.chip.subj{background:#e4eff3;color:#2e6b80;padding-left:12px;cursor:default}
+.chip svg{width:26px;height:26px}
+.avnote{margin:30px 0 0;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px;color:var(--muted)}
+.avnote b{color:var(--ink)}
+
+/* ---------- Tab 3: persona x subject matrix ---------- */
+.pickrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 6px}
+.pk{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 12px 4px 4px;font:600 13px Inter;color:var(--muted);cursor:pointer}
+.pk svg{width:28px;height:28px}
+.pk[aria-pressed=true]{border-color:var(--core);background:var(--core-soft);color:var(--core)}
+.pk:not([aria-pressed=true]) svg{filter:grayscale(1);opacity:.6}
+.quick{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.quick .mode{font-size:13px;color:var(--muted);margin-left:6px}
+.quick .mode b{color:var(--ink)}
+.hmwrap{overflow-x:auto;padding:18px 22px 22px}
+.hmx{display:grid;gap:3px;font-size:13px;min-width:min-content}
+.hmx .hd{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;font-size:11px;font-weight:600;text-align:center;line-height:1.2;padding-bottom:6px;color:var(--ink)}
+.hmx .hd svg{width:34px;height:34px}
+.hmx .hd.tl{align-items:flex-start;text-align:left;font:500 10.5px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.hmx .sn{display:flex;align-items:center;font-weight:500;line-height:1.25}
+.hmx .cl{height:34px;border-radius:5px;display:flex;align-items:center;justify-content:center;font:600 13px "IBM Plex Mono",monospace;cursor:pointer;border:0;font-family:"IBM Plex Mono",monospace}
+.hmx .cl.z{cursor:default}
+.hmx .cl.on{outline:2px solid var(--ink);outline-offset:1px}
+.hmx .tt{display:flex;align-items:center;justify-content:center;font:500 12.5px "IBM Plex Mono",monospace;color:var(--muted)}
+.hmx{position:relative;overflow:hidden}
+.hmx .sn{position:relative}
+.hmx .sn::after{content:"";position:absolute;left:0;right:-4000px;top:50%;border-top:1.5px dotted #a9b8b5;z-index:0;pointer-events:none}
+.hmx .snl{position:relative;z-index:1;background:#fff;padding-right:8px;display:inline-flex;align-items:center;gap:7px}
+.hmx .cl{position:relative;z-index:1;align-self:center}
+.hmx .tt span{position:relative;z-index:1;background:#fff;padding:0 4px}
+.hmx .pj{position:relative;z-index:1;background:#fff;display:flex;align-items:center;font-size:13px;padding:4px 0 4px 12px;border-left:2px solid var(--des-soft);color:var(--ink);line-height:1.3}
+.hmx .pj b{font-weight:600}
+.hmx .grp{grid-column:1/-1;font:500 10.5px "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--core);padding:12px 0 4px;border-bottom:1px solid var(--line);margin-bottom:3px}
+.hmx.dense .hd{font-size:10px}
+.hmx.dense .hd svg{width:30px;height:30px}
+.hmx.dense .pj{font-size:12.5px}
+.hmx.dense .sn{font-size:12.5px}
+.hmx .sn.row-off,.hmx .tt.row-off{opacity:1;color:#b9c3c1}
+.hmx .sn.row-off .code{opacity:.45}
+.hmx .sn.row-off::after{border-top-color:#dde4e2}
+.hmx .sn.noline::after{display:none}
+.hmx .pj.none{color:#b9c3c1}
+.hmx .pj ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+.hmx .pj .who{display:inline-block;font:500 10.5px "IBM Plex Mono",monospace;letter-spacing:.04em;color:var(--core);background:var(--core-soft);border-radius:4px;padding:0 5px;margin-right:6px}
+.hmx .pj.none{color:#aab5b3}
+.hmx .row-off{opacity:.35}
+.hlegend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);align-items:center;padding:0 22px 16px}
+.hlegend span{display:inline-flex;align-items:center;gap:5px}.hlegend i{width:13px;height:13px;border-radius:3px;display:inline-block}
+.celldetail{margin:0 22px 22px;padding:14px 16px;background:var(--paper);border-radius:10px;font-size:14px;min-height:20px}
+.celldetail ul{margin:6px 0 0;padding:0;list-style:none}
+.celldetail li{padding:2px 0}
+.celldetail .why{color:#6f4a06;background:var(--des-soft);border-radius:6px;padding:6px 9px;margin-top:6px;display:block}
+.seg{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px;box-shadow:var(--sh);flex-wrap:wrap}
+.seg button{font:500 13.5px Inter;color:var(--muted);background:none;border:0;padding:8px 16px;border-radius:7px;cursor:pointer;white-space:nowrap}
+.seg button[aria-selected=true]{background:var(--ink);color:#fff}
+.pk[aria-disabled=true]{opacity:.45;cursor:not-allowed}
+.projpick{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.pres{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.pcardx{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.pcardx .top{display:flex;gap:14px;align-items:center}
+.pcardx .top svg{width:76px;height:76px;flex:0 0 76px}
+.pcardx h3{font:600 20px Spectral,serif;letter-spacing:0;text-transform:none;color:var(--ink);margin:0}
+.pcardx .tg{font-size:14px;color:var(--muted);margin:2px 0 0}
+.pcardx .via{font-size:13.5px}
+.pcardx .via .projt{font-weight:600}
+.pcardx ul{list-style:none;margin:0;padding:0;font-size:13.5px}
+.pcardx .why{color:#6f4a06;background:var(--des-soft);border-radius:6px;padding:7px 10px;font-size:13.5px}
+.psum{background:var(--core-soft);color:#0a4f4f;border-radius:12px;padding:14px 18px;margin-bottom:14px;font-size:15px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.psum b{color:#073f3f}
+.msl{display:flex;flex-direction:column;gap:8px}
+.msl li{font-size:13.5px;line-height:1.45;padding:8px 10px;background:var(--paper);border-radius:8px}
+.tophead{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.toplink{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--plan-line)}
+.toplink:hover{color:var(--core);border-color:var(--core)}
+.brandbadge{flex:0 0 auto;display:flex;align-items:center;gap:10px;background:#1f3a5f;color:#fff;border-radius:10px;padding:10px 16px;font:750 15px "Segoe UI",Inter,system-ui,sans-serif;letter-spacing:.2px;margin-top:2px}
+.mk4{display:grid;grid-template-columns:1fr 1fr;width:22px;height:22px;gap:2px;flex:none}
+.mk4 b{display:block}
+.mk4 b:nth-child(1){background:#1f5fbf}.mk4 b:nth-child(2){background:#c62828}.mk4 b:nth-child(3){background:#2e7d32}.mk4 b:nth-child(4){background:#fff}
+.logo-slot img{display:block;max-width:220px;max-height:90px;height:auto}
+.logo-slot:empty{display:none}
+@media(max-width:700px){.tophead{flex-direction:column-reverse}}
+.also{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;color:var(--muted);margin:2px 0 4px}
+</style>
+</head>
+<body>
+<!-- shared SVG filter for the hand-sketched avatar line -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="sketchy" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="tophead">
+    <div>
+      <p class="eyebrow"><a class="toplink" href="https://courses.uwe.ac.uk/K401/urban-planning" target="_blank" rel="noopener noreferrer">UWE Bristol &middot; BSc (Hons) Urban Planning &#8599;</a></p>
+      <h1>Thinking of studying Urban Planning?</h1>
+      <p class="lede" style="margin-bottom:8px">A toolkit for applicants considering studying on the <b>BSc Urban Planning</b> programme at UWE Bristol. Visit the <a href="https://courses.uwe.ac.uk/K401/urban-planning" target="_blank" rel="noopener noreferrer">course page</a> for more info.</p>
+      <p class="lede">See how what you study at <b>school or further education college</b> connects to a planning degree, and meet the <b>ten kinds of planner</b> you could grow into. In the third tab, do explore the visual matrix, where for instance, you can explore the subjects you are studying and see which personas they lead to.</p>
+    </div>
+    <div class="brandbadge" role="img" aria-label="UWE Planning School"><i class="mk4" aria-hidden="true"><b></b><b></b><b></b><b></b></i><span>UWE Planning School</span></div>
+  </header>
+
+  <nav class="maintabs" role="tablist" aria-label="Toolkit sections">
+    <button role="tab" id="tb-curriculum" aria-controls="tab-curriculum" data-tab="curriculum"><span class="n">1</span>How what you studied in school links to Planning</button>
+    <button role="tab" id="tb-avatars" aria-controls="tab-avatars" data-tab="avatars"><span class="n">2</span>Meet the ten Planning personas</button>
+    <button role="tab" id="tb-matrix" aria-controls="tab-matrix" data-tab="matrix"><span class="n">3</span>Planning personas and school subjects matrix</button>
+  </nav>
+
+  <!-- ===================== TAB 1 ===================== -->
+  <section id="tab-curriculum" role="tabpanel" aria-labelledby="tb-curriculum">
+    <div class="panel pad">
+      <h2>How what you studied in school links to Planning</h2>
+      <p class="lede" style="margin-bottom:16px">Pick your qualification and subject. Each row shows the curriculum points that connect to planning, a project you might already do at school, and the <b>projects and coursework</b> they lead to on the BSc Urban Planning at UWE.</p>
+      <div class="row" style="margin-bottom:10px">
+        <label class="lbl">Year group<span class="field sel"><select id="ov-year"></select></span></label>
+        <label class="lbl">Subject<span class="field sel"><select id="ov-sub"></select></span></label>
+      </div>
+      <p class="hintbar" id="ov-caption" style="margin:0 0 14px"></p>
+      <div class="scrollx" id="ov-table"></div>
+      <h3>Notes</h3>
+      <ul class="notes" id="ov-notes"></ul>
+      <h3>Coding convention</h3>
+      <div class="conv" id="ov-conv"></div>
+      <p class="footnote" id="ov-src"></p>
+    </div>
+  </section>
+
+  <!-- ===================== TAB 2 ===================== -->
+  <section id="tab-avatars" role="tabpanel" aria-labelledby="tb-avatars" hidden>
+    <h2>Meet the ten Planning personas</h2>
+    <p class="lede">Ten personas describe what our graduates can do. Choose one to see what it means and which subjects build towards it. Subjects and codes match the first tab.</p>
+    <div class="strip" id="avStrip" role="group" aria-label="The ten Planning personas"></div>
+    <p class="hintbar" id="stripHint">Click a persona to open its card.</p>
+
+    <div class="panel" id="avCard" hidden style="margin-top:16px"></div>
+
+    <div class="sectitle"><h2>Visual overview</h2><span class="hintbar">Personas on the outer ring, subjects on the inner ring</span></div>
+    <div class="panel">
+      <div class="wheel-layout">
+        <div class="wheel-col">
+          <div class="zoom">
+            <button type="button" id="zIn" aria-label="Zoom in">+</button>
+            <button type="button" id="zOut" aria-label="Zoom out">&minus;</button>
+            <button type="button" id="zReset" aria-label="Reset zoom">&#8634;</button>
+            <span id="zLabel">100%</span>
+          </div>
+          <svg id="wheelSvg" viewBox="0 0 720 720" role="img" aria-label="Connection wheel linking subjects and Planning personas"></svg>
+        </div>
+        <div class="wheel-side">
+          <div class="winst"><b>How it works.</b> Click a persona on the outer ring, or a subject on the inner ring, to see what it links to. Connected segments turn <span class="gold">gold</span>. Click the centre to clear.</div>
+          <label class="lbl">Jump to a persona or subject<span class="field sel"><select id="wheelSelect"></select></span></label>
+          <div id="wheelInfo"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="avnote">The avatars were created based on the <b>programme learning outcomes of the BSc Urban Planning programme</b> offered here at UWE. You can find more at <a href="https://courses.uwe.ac.uk/K401/urban-planning" target="_blank" rel="noopener noreferrer">https://courses.uwe.ac.uk/K401/urban-planning</a></p>
+  </section>
+
+  <!-- ===================== TAB 3 ===================== -->
+  <section id="tab-matrix" role="tabpanel" aria-labelledby="tb-matrix" hidden>
+    <h2>Planning personas and school subjects matrix</h2>
+    <p class="lede">Explore in three ways. <b>By my subjects</b> starts from the subjects you are studying and shows which personas they lead to. <b>By persona</b> shows how strongly each A level and T level subject links to the personas you choose. <b>By school project</b> starts from the projects you enjoyed. Whichever you pick, you see up to <b>three personas</b> at a time.</p>
+    <div class="seg" role="tablist" aria-label="View" style="margin-bottom:14px">
+      <button role="tab" type="button" aria-selected="true" data-mv="mine">By my subjects</button>
+      <button role="tab" type="button" aria-selected="false" data-mv="subject">By persona</button>
+      <button role="tab" type="button" aria-selected="false" data-mv="project">By school project</button>
+    </div>
+
+    <div id="mv-mine" hidden>
+      <div class="panel" style="padding:20px 22px">
+        <div class="projpick" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+          <label class="lbl">Subject 1<span class="field sel"><select id="ms0"></select></span></label>
+          <label class="lbl">Subject 2<span class="field sel"><select id="ms1"></select></span></label>
+          <label class="lbl">Subject 3<span class="field sel"><select id="ms2"></select></span></label>
+          <label class="lbl">Subject 4 (optional)<span class="field sel"><select id="ms3"></select></span></label>
+        </div>
+        <p class="hintbar" style="margin:12px 0 0">Choose the A levels you are studying, or your T level. A T level is worth three A levels, so it can be chosen on its own.</p>
+      </div>
+      <div id="msOut" style="margin-top:14px"></div>
+    </div>
+
+    <div id="mv-subject">
+      <div class="panel" style="padding:18px 22px 4px">
+        <div class="quick">
+          <span class="mode" id="pkMode" style="margin-left:0"></span>
+          <button class="btn" type="button" id="pkNone">Clear</button>
+        </div>
+        <div class="pickrow" id="pkRow" role="group" aria-label="Choose up to three personas"></div>
+        <p class="hintbar" id="pkHint" style="margin:6px 0 14px" aria-live="polite">Choose up to three personas to compare.</p>
+      </div>
+      <div class="panel" style="margin-top:14px">
+        <div class="hmwrap"><div class="hmx" id="hmx"></div></div>
+        <div class="hlegend" id="hleg"></div>
+        <div class="celldetail" id="hdet"></div>
+      </div>
+    </div>
+
+    <div id="mv-project" hidden>
+      <div class="panel" style="padding:20px 22px">
+        <div class="projpick">
+          <label class="lbl">The school project I enjoyed most<span class="field sel"><select id="pp0"></select></span></label>
+          <label class="lbl">Another project I enjoyed (optional)<span class="field sel"><select id="pp1"></select></span></label>
+          <label class="lbl">And one more (optional)<span class="field sel"><select id="pp2"></select></span></label>
+        </div>
+        <p class="hintbar" style="margin:12px 0 0">Projects are grouped by subject. Pick ones that feel like something you did or would enjoy doing.</p>
+      </div>
+      <div id="ppOut" style="margin-top:14px"></div>
+    </div>
+
+    <p class="footnote">Counts come from the links shown in the persona cards. Project titles are examples of the kind of school work that builds each link; your own projects may differ.</p>
+  </section>
+
+  <p class="credit">Prompt engineered by Dr Deepak Gopinath and designed in Claude &ndash; 15 Nov 2026</p>
+</div>
+
+<script>
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=id=>document.getElementById(id);
+const UWE_URL='https://courses.uwe.ac.uk/K401/urban-planning';
+
+/* ================= main tab routing ================= */
+const TABS=['curriculum','avatars','matrix'];
+function showTab(t,push){
+  if(!TABS.includes(t))t='curriculum';
+  TABS.forEach(k=>{$('tab-'+k).hidden=k!==t;$('tb-'+k).setAttribute('aria-selected',k===t);});
+  if(push){try{history.replaceState(null,'','#'+t);}catch(e){location.hash=t;}}
+}
+document.querySelectorAll('.maintabs button').forEach(b=>b.addEventListener('click',()=>{showTab(b.dataset.tab,true);window.scrollTo({top:0});}));
+window.addEventListener('hashchange',()=>showTab(location.hash.slice(1)));
+
+/* ===================================================================
+   TAB 1  Links to school curriculum
+   =================================================================== */
+const CUR={
+a:{label:'Year 13 (AS and A level)',kind:'AS and A level curriculum and content mapping points.',cats:[
+{subject:'Geography',geo:1,items:[["G1","Water cycle: stores, flows, runoff and catchment hydrology"],["G2","Water/carbon cycles, land-use change and climate feedbacks"],["G3","Changing places: connections, flows and external influences"],["G4","Place meanings, representation and place-making"],["G5","Geographical data, sources, reliability and critical evaluation"],["G6","Qualitative methods and research ethics"],["G7","Quantitative/geospatial skills, statistics and GIS"],["G8","Fieldwork, sampling and data quality"],["G9","Independent geographical investigation/NEA"],["AO1","Knowledge and understanding"],["AO2","Application, interpretation, analysis and evaluation"],["AO3","Geographical investigation and skills"]],proj:"Regeneration/NEA scoping investigation",projd:"develop a geographical question around regeneration, flooding, green infrastructure or people's perceptions of place and identify appropriate evidence.",
+ uni:[["Researching the City","design a research question, then collect and analyse evidence about a real place"],["People, Places and Change","analyse how places change, and who they change for"],["Planning Studio A: Housing in the Countryside","map and appraise a rural site before proposing where new homes should go"],["Spatial Planning Dissertation","an independent investigation that builds directly on NEA skills"]]},
+{subject:'Design & Technology',items:[["DT1","Identify design possibilities and user requirements"],["DT2","Research and analyse design contexts"],["DT3","Produce specifications"],["DT4","Generate and develop design ideas"],["DT5","Apply technical knowledge"],["DT6","Materials selection and performance"],["DT7","Prototype manufacture"],["DT8","Testing, evaluation and refinement"],["DT9","Social, moral and environmental considerations"],["DT10","Commercial/manufacturing considerations"]],proj:"Low-carbon community building",projd:"research users and context, develop specifications and produce/test a design solution.",
+ uni:[["City Lab: Digital Design Skills","draw, model and present places with digital design tools"],["Planning Studio B: Urban Design Futures and Regeneration","develop and test a design-led regeneration proposal"],["Infrastructure Design and Implementation Project (option)","design infrastructure and plan how it is delivered"]]},
+{subject:'Physics',items:[["P1","Measurement and uncertainty"],["P2","Mechanics and forces"],["P3","Materials and mechanical properties"],["P4","Energy and power"],["P5","Electrical systems"],["P6","Waves"],["P7","Apply mathematical relationships"],["P8","Experimental design"],["P9","Analyse and evaluate experimental evidence"]],proj:"Can we improve building performance?",projd:"Investigate heat transfer, structural performance, renewable energy or material behaviour.",
+ uni:[["Healthy Sustainable Communities","apply ideas about energy and climate to how neighbourhoods are planned"],["Infrastructure Design and Implementation Project (option)","work on the physical side of energy, water and transport networks"],["Transport and Mobility (option)","think about movement, flows and capacity in a network"]]},
+{subject:'Chemistry',items:[["CH1","Structure and properties of materials"],["CH2","Bonding and material behaviour"],["CH3","Energetics"],["CH4","Quantitative chemistry"],["CH5","Chemical analysis"],["CH6","Experimental investigation"],["CH7","Evaluate evidence and uncertainty"],["CH8","Environmental and industrial applications of chemistry"]],proj:"What should we build with?",projd:"Compare conventional and lower-carbon construction materials according to performance and environmental criteria.",
+ uni:[["Healthy Sustainable Communities","weigh air quality, pollution and the environmental impact of development"],["Conserving Buildings and Places (option)","understand historic materials and how buildings age and decay"],["Planning Studio B: Urban Design Futures and Regeneration","make the case for lower-carbon materials in a proposal"]]},
+{subject:'Biology / Environmental Science',items:[["ES1","Ecosystems and biodiversity"],["ES2","Biogeochemical/nutrient cycles"],["ES3","Human effects on ecosystems"],["ES4","Pollution and environmental change"],["ES5","Resource management and sustainability"],["ES6","Sampling and ecological investigation"],["ES7","Quantitative environmental data"],["ES8","Evaluate environmental solutions and evidence"]],proj:"Biodiversity enhancement plan",projd:"survey a site and propose green infrastructure/habitat interventions.",
+ uni:[["Healthy Sustainable Communities","link green space, nature and people's health"],["Planning Studio A: Housing in the Countryside","account for landscape, habitats and biodiversity on a rural site"],["Planning Global Cities","compare how cities around the world respond to environmental change"]]},
+{subject:'Mathematics',items:[["M1","Mathematical argument and proof"],["M2","Algebra and functions"],["M3","Coordinate geometry"],["M4","Calculus and rates of change"],["M5","Statistics and distributions"],["M6","Data interpretation"],["M7","Mechanics where applicable"],["M8","Mathematical modelling"],["M9","Interpret solutions in context"],["M10","Evaluate assumptions and limitations"]],proj:"Development scenario model",projd:"compare options using density, floor area, demand, costs, accessibility or environmental data.",
+ uni:[["City Lab: Project Appraisals","test whether a development is financially viable"],["Researching the City","use statistics to analyse data about places"],["Transport and Mobility (option)","work with travel data and simple models"]]},
+{subject:'Computer Science',items:[["CS1","Computational thinking"],["CS2","Algorithms"],["CS3","Programming"],["CS4","Data structures and representation"],["CS5","Computer systems"],["CS6","Databases/data management"],["CS7","Develop computational solutions"],["CS8","Test and evaluate systems"],["CS9","Ethical, legal and social implications of computing"]],proj:"Smart campus",projd:"analyse sensor or spatial data and create/prototype a computational response to an identified problem.",
+ uni:[["City Lab: Digital Design Skills","use GIS and digital tools to map and present places"],["City Lab: Strategic Planning Skills","use spatial data to plan at city or regional scale"],["Researching the City","manage, analyse and present data sets"]]},
+{subject:'Business / Economics',items:[["BE1","Organisational/business objectives"],["BE2","Stakeholders and competing interests"],["BE3","Revenues, costs and investment"],["BE4","Markets and demand"],["BE5","Decision-making using quantitative evidence"],["BE6","Risk and uncertainty"],["BE7","Externalities/social impacts"],["BE8","Evaluate strategic alternatives"]],proj:"Regeneration business case",projd:"compare alternative uses of a development site against commercial, social and environmental criteria.",
+ uni:[["City Lab: Project Appraisals","appraise the costs, values and viability of a scheme"],["Development, Practice and Law","understand how development happens, and who pays"],["City Regeneration (option)","evaluate regeneration strategies and who benefits"]]},
+{subject:'English',items:[["EN1","Analyse language/texts critically"],["EN2","Understand audience, purpose and context"],["EN3","Examine representation and discourse"],["EN4","Compare texts and perspectives"],["EN5","Undertake research"],["EN6","Select and synthesise evidence"],["EN7","Construct sophisticated arguments"],["EN8","Communicate effectively for different audiences"]],proj:"Whose place is it?",projd:"Analyse how a development is represented by the developer, council, press and local community.",
+ uni:[["Planning Theory","write essays that argue for, and compare, ideas about planning"],["Communities, Neighbourhoods and Participation","prepare consultation material for different audiences"],["Live briefs (year two)","write reports and present to a real-life client"]]},
+{subject:'Art & Design',items:[["AD1","Sustained contextual investigation"],["AD2","Research artists/designers and relevant sources"],["AD3","Experiment with media and processes"],["AD4","Record observations and insights"],["AD5","Develop and refine ideas"],["AD6","Critically evaluate work"],["AD7","Produce a personal and meaningful response"],["AD8","Present intentions effectively"]],proj:"Reimagining a contested place",projd:"develop a portfolio of visual research leading to a spatial or artistic intervention.",
+ uni:[["City Lab: Digital Design Skills","build the drawing and visual skills used to present places"],["Planning Studio B: Urban Design Futures and Regeneration","imagine, draw and test future places"]]},
+{subject:'Sociology',items:[["SOC1","Apply sociological concepts and theories"],["SOC2","Examine social differentiation and inequality"],["SOC3","Analyse identity and culture"],["SOC4","Understand power and social structures"],["SOC5","Quantitative research methods"],["SOC6","Qualitative research methods"],["SOC7","Ethics and research design"],["SOC8","Interpret and evaluate sociological evidence"]],proj:"Who benefits from regeneration?",projd:"Investigate different groups' perceptions of affordability, belonging, safety or displacement.",
+ uni:[["Communities, Neighbourhoods and Participation","plan how to involve communities and hear different voices"],["People, Places and Change","examine inequality, identity and belonging in places"],["City Regeneration (option)","ask who gains and who loses from regeneration"]]},
+{subject:'Politics / Law',items:[["PL1","Political institutions and decision-making"],["PL2","Democracy and participation"],["PL3","Rights and responsibilities"],["PL4","Law and public decision-making"],["PL5","Competing political perspectives"],["PL6","Analyse evidence and arguments"],["PL7","Construct reasoned judgements"],["PL8","Apply ideas to contemporary issues"]],proj:"Planning inquiry",projd:"investigate a contested development and represent stakeholder positions before reaching a justified decision.",
+ uni:[["Planning Fundamentals 1 and 2","learn how the planning system works and how decisions are made"],["Development, Practice and Law","apply planning law to real development cases"],["Planning Theory","debate the politics and purpose of planning"]]},
+{subject:'History',items:[["H1","Chronology and historical change"],["H2","Causation and consequence"],["H3","Continuity and change"],["H4","Historical significance"],["H5","Analyse and evaluate primary sources"],["H6","Evaluate competing interpretations"],["H7","Local and national history in wider contexts"],["H8","Independent historical investigation/NEA"]],proj:"How has our town changed?",projd:"compare historic maps, census data and images to explain how a place developed.",
+ uni:[["Conserving Buildings and Places (option)","judge what makes historic buildings and places significant"],["Planning Theory","trace how ideas about planning have developed over time"],["People, Places and Change","explain how places have changed, and why"]]},
+{subject:'Philosophy',items:[["PH1","Core concepts and methods of philosophy"],["PH2","Moral philosophy and ethical theories"],["PH3","Applied ethics"],["PH4","Knowledge, evidence and justification"],["PH5","Construct and evaluate arguments"],["PH6","Form reasoned judgements"]],proj:"Who should decide?",projd:"debate the ethics of a contested development: whose interests count, and why.",
+ uni:[["Planning Theory","question the values behind planning decisions"],["Development, Practice and Law","weigh professional ethics in real development cases"],["Communities, Neighbourhoods and Participation","think about fairness in who gets a say"]]},
+{subject:'Psychology',items:[["PSY1","Approaches and core concepts in psychology"],["PSY2","Social influence and group behaviour"],["PSY3","Perception, memory and attention"],["PSY4","Stress, mental health and wellbeing"],["PSY5","Research methods"],["PSY6","Data handling and statistics"],["PSY7","Ethics in research"],["PSY8","Evaluate psychological evidence"]],proj:"Does this place make us feel well?",projd:"survey how people perceive safety, stress or wellbeing in different spaces.",
+ uni:[["Healthy Sustainable Communities","link the design of places to health and wellbeing"],["Communities, Neighbourhoods and Participation","understand how people respond to change in their area"],["Researching the City","design surveys and interviews, and run them ethically"]]}
+]},
+t:{label:'Year 13 (T level)',kind:'T level core content mapping points.',cats:[
+{subject:'Design, Surveying and Planning for Construction',t:1,items:[["T1.1","Health and safety in construction"],["T1.2","Construction science: materials, forces and environmental performance"],["T1.3","Measurement and surveying of the built environment"],["T1.4","Building technology and construction methods"],["T1.5","Information and data, including building information modelling"],["T1.6","Digital technology and digital engineering techniques"],["T1.7","Construction mathematical techniques"],["T1.8","Design principles and processes"],["T1.9","Building regulations, standards and legislation"],["T1.10","Sustainability and the environmental impact of construction"],["T1.11","Business, commerce, relationships and corporate social responsibility"],["T1.12","Project management, budgeting, procurement and risk management"],["T1.13","Specialism: measuring, analysing and designing the built environment"]],proj:"Employer-set project and industry placement",projd:"respond to an employer's brief, such as surveying a site and developing a design or project plan, alongside a substantial industry placement.",
+ uni:[["Planning Studio A: Housing in the Countryside","survey and appraise a site before proposing development"],["Development, Practice and Law","see how planning permission and building regulations differ and connect"],["City Lab: Project Appraisals","build on budgeting and cost skills to test a scheme's viability"],["Infrastructure Design and Implementation Project (option)","plan and manage the delivery of a project"]]},
+{subject:'Agriculture, Land Management and Production',t:1,items:[["T2.1","The land-based sector, its businesses and supply chains"],["T2.2","Sustainability and environmental management"],["T2.3","Land, soil and water management"],["T2.4","Plants, animals and biodiversity"],["T2.5","Policy, legislation and regulation affecting land use"],["T2.6","Business, finance and markets"],["T2.7","Data, technology and precision approaches"],["T2.8","Health, safety and biosecurity"],["T2.9","Ethics and working with stakeholders"]],proj:"Employer-set project and industry placement",projd:"plan improvements to a farm, estate or site, balancing production, the environment and the business case.",
+ uni:[["Planning Studio A: Housing in the Countryside","plan for new homes in a rural setting, balancing landscape and farming"],["Healthy Sustainable Communities","link land, food, water and nature to healthy places"],["Planning Fundamentals 1 and 2","learn how planning policy manages change in the countryside"]]},
+{subject:'Digital Software Development (formerly Digital Production, Design and Development)',t:1,items:[["T3.1","Business context and digital culture"],["T3.2","Data and digital analysis"],["T3.3","Digital environments and networks"],["T3.4","Emerging issues and technologies"],["T3.5","Legislation, privacy and data ethics"],["T3.6","Problem solving and computational thinking"],["T3.7","Programming"],["T3.8","Security"],["T3.9","Testing"],["T3.10","Tools and user-centred design"]],proj:"Employer-set project and industry placement",projd:"design, prototype and test a digital product for a client's brief.",
+ uni:[["City Lab: Digital Design Skills","use GIS and digital design tools to map and present places"],["City Lab: Strategic Planning Skills","work with spatial data at city and regional scale"],["Researching the City","collect, analyse and present data about places"],["Planning Global Cities","compare how cities around the world are planned and managed"]]}
+]}};
+(function(){
+const NOTES=[
+ "The codes are mapping codes created for this toolkit, not DfE or awarding organisation references, so G7 or T1.3 is not an official code.",
+ "The AS and A level subjects follow the DfE's GCE AS and A level subject content. Individual exam board specifications differ, so treat these as curriculum and content mapping points rather than a claim that every student will have met each numbered item by the end of Year 13.",
+ "T level points summarise the core content of each T level. The awarding organisation's specification sets out the detail, and every T level also includes an employer-set project and an industry placement."];
+const CONV={a:"G Geography | DT Design & Technology | P Physics | CH Chemistry | ES Environmental Science/Biology | M Mathematics | CS Computer Science | BE Business/Economics | EN English | AD Art & Design | SOC Sociology | PL Politics/Law | H History | PH Philosophy | PSY Psychology | AO Assessment objective",
+ t:"T1 Design, Surveying and Planning for Construction | T2 Agriculture, Land Management and Production | T3 Digital Software Development (formerly Digital Production, Design and Development). Points within each T level are numbered T1.1, T1.2 and so on."};
+CUR.a.cats.sort((x,y)=>x.subject.localeCompare(y.subject)); // T levels stay in code order T1, T2, T3
+let YR='a',SUB='';
+$('ov-year').innerHTML=Object.entries(CUR).map(([k,v])=>`<option value="${k}">${esc(v.label)}</option>`).join('');
+function render(){
+  const c=CUR[YR],cats=c.cats;
+  if(SUB&&!cats.some(x=>x.subject===SUB))SUB='';
+  $('ov-year').value=YR;
+  $('ov-sub').innerHTML='<option value="">All subjects</option>'+cats.map(x=>`<option ${x.subject===SUB?'selected':''}>${esc(x.subject)}</option>`).join('');
+  const list=SUB?cats.filter(x=>x.subject===SUB):cats;
+  $('ov-caption').textContent=`Showing ${SUB||'all subjects'} for ${c.label}. ${c.kind}`;
+  $('ov-table').innerHTML=`<table class="ovt"><thead><tr><th>Subject</th><th>Curriculum and content points for mapping</th><th>Likely school project or application</th><th class="uni">Potential projects/coursework in planning curriculum at university</th></tr></thead><tbody>${
+    list.map(x=>`<tr><td><b>${esc(x.subject)}</b>${x.t?'<br><span class="muted" style="font-size:12.5px;color:var(--muted)">T level</span>':''}</td>
+    <td><ul class="ovpts">${x.items.map(([code,tx])=>`<li><span class="code ${x.geo?'geo':''} ${x.t?'t':''}">${esc(code)}</span> ${esc(tx)}</li>`).join('')}</ul></td>
+    <td><b>${esc(x.proj)}</b>${x.projd?': '+esc(x.projd):''}</td>
+    <td class="uni"><ul class="unilist">${x.uni.map(([m,d])=>`<li><b>${esc(m)}</b>: ${esc(d)}</li>`).join('')}</ul></td></tr>`).join('')}</tbody></table>`;
+  $('ov-notes').innerHTML=NOTES.map(n=>`<li>${esc(n)}</li>`).join('');
+  $('ov-conv').innerHTML=`<p><b>Year 13 / AS and A level:</b> ${esc(CONV.a)}</p><p><b>Year 13 / T level:</b> ${esc(CONV.t)}</p>`;
+  $('ov-src').innerHTML=`Sources: <a href="https://dera.ioe.ac.uk/21705/1/GCE_AS_and_A_level_subject_content_for_geography.pdf" target="_blank" rel="noopener noreferrer">GCE AS and A level subject content for geography</a>, <a href="https://www.tlevels.gov.uk/students/subjects" target="_blank" rel="noopener noreferrer">T Level subjects (tlevels.gov.uk)</a>, <a href="${UWE_URL}" target="_blank" rel="noopener noreferrer">BSc Urban Planning course page (UWE)</a>. Geography codes are outlined in teal and T level codes in amber.`;
+}
+$('ov-year').addEventListener('change',e=>{YR=e.target.value;render();});
+$('ov-sub').addEventListener('change',e=>{SUB=e.target.value;render();});
+render();
+})();
+
+/* ===================================================================
+   Avatar drawing (hand-sketched SVG busts)
+   =================================================================== */
+const AVATARS=[
+ {name:'The Thinktank',short:'Thinktank',tag:'understands how planning works.',desc:'Explains how land use planning works and how it enables sustainable development, using core planning skills and planning theory.',path:'Planning for healthy environments',
+  skin:'#6b4528',hair:'afro',hc:'#1d1410',cloth:'#2f4b7c',bg:'#d9e4f5',ear:1,lapel:1,icon:'map'},
+ {name:'The Ecologist',short:'Ecologist',tag:'connects global change to local places.',desc:'Recognises local and global challenges and responds to them with critical thinking.',path:'Biodiversity and energy management',
+  skin:'#a46c48',hair:'short',hc:'#1a1310',cloth:'#6b7b3a',bg:'#e2ecd3',strap:1,icon:'globe'},
+ {name:'The Strategist',short:'Strategist',tag:'sees how complex systems fit together.',desc:'Applies systems thinking at different spatial scales, across both urban and rural areas.',path:'Planning for connected urban/rural communities',
+  skin:'#efc9a3',hair:'bob',hc:'#16110f',cloth:'#137b7b',bg:'#d3ecea',glasses:1,icon:'network'},
+ {name:'The Advocate',short:'Advocate',tag:'challenges inequality and works for positive change.',desc:'Defines, analyses and addresses economic, social, political, environmental and health inequalities.',path:'Urban regeneration and masterplanning',
+  skin:'#583822',hair:'fade',hc:'#120d0a',cloth:'#c58b1f',bg:'#f5e6c6',beard:1,icon:'mega'},
+ {name:'The Analyst',short:'Analyst',tag:'understands uncertainty, risk and consequences.',desc:'Evaluates environmental and economic risks, understands viability and balances different agendas.',path:'Protecting our historic places',
+  skin:'#f3d2bb',hair:'ponytail',hc:'#9a4a22',cloth:'#6f3f78',bg:'#eadcf0',icon:'chart'},
+ {name:'The Navigator',short:'Navigator',tag:'engages with the rules and institutions that shape places.',desc:'Explains land use planning in different legal contexts and analyses economic, social, political, environmental and health data.',path:'Project management',
+  skin:'#c58f68',hair:'curly',hc:'#241914',cloth:'#45607d',bg:'#dbe5ef',stubble:1,icon:'compass'},
+ {name:'The Change Maker',short:'Change Maker',tag:'works with communities to make change happen.',desc:'Values community engagement and responds to technological change when working across disciplines.',path:'Engaged communities, changing places',
+  skin:'#b47a52',hair:'hijab',hc:'#b0436b',cloth:'#2c5d63',bg:'#f6dbe5',icon:'people'},
+ {name:'The Researcher',short:'Researcher',tag:'asks questions and uses evidence to answer them.',desc:'Judges the quality of evidence and uses digital tools and modelling to solve complex problems.',path:'Smart cities and open data',
+  skin:'#eac39c',hair:'side',hc:'#111111',cloth:'#2f6f4f',bg:'#d6ebdf',glasses:1,icon:'lens'},
+ {name:'The Placemaker',short:'Placemaker',tag:'imagines and designs better places.',desc:'Applies design principles to create high-quality places, thinking about long-term impacts on people and the planet.',path:'Designing high quality places',
+  skin:'#c48a62',hair:'longcurly',hc:'#3b2418',cloth:'#d0603f',bg:'#fadfd3',ear:1,icon:'house'},
+ {name:'The Lifelong Learner',short:'Lifelong Learner',tag:'grows into an ethical, reflective professional.',desc:'Communicates, negotiates and leads while upholding ethical behaviour.',path:'Reflective practitioner',
+  skin:'#efc6a9',hair:'grey',hc:'#b8b4ae',cloth:'#7a5a3e',bg:'#ece3d6',beard:1,glasses:1,icon:'book'}
+];
+const ICONS={
+ map:'<path d="M3 6 L9 3 L15 6 L21 3 L21 18 L15 21 L9 18 L3 21Z M9 3 V18 M15 6 V21"/>',
+ globe:'<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12 H21"/>',
+ network:'<circle cx="5" cy="6" r="2.6"/><circle cx="19" cy="6" r="2.6"/><circle cx="12" cy="19" r="2.6"/><path d="M7.5 6 H16.5 M6.3 8.3 L10.7 16.7 M17.7 8.3 L13.3 16.7"/>',
+ mega:'<path d="M3 10 V14 H7 L16 19 V5 L7 10 Z"/><path d="M19 9 Q21.5 12 19 15"/>',
+ chart:'<path d="M4 3 V20 H21"/><path d="M8 16 V12 M12 16 V8 M16 16 V10 M20 16 V5"/>',
+ compass:'<circle cx="12" cy="12" r="9"/><path d="M12 5.5 L14.2 12 L12 18.5 L9.8 12Z"/>',
+ people:'<circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="8" r="3"/><path d="M2.5 20 C3 15 13 15 13.5 20 M11 20 C11.5 15 21 15 21.5 20"/>',
+ lens:'<circle cx="10" cy="10" r="6"/><path d="M14.5 14.5 L20.5 20.5"/>',
+ house:'<path d="M4 12 L12 5 L20 12 V20 H4Z M10 20 V15 H14 V20"/>',
+ book:'<path d="M12 6 C9 4 5 4 3 5 V19 C5 18 9 18 12 20 C15 18 19 18 21 19 V5 C19 4 15 4 12 6Z M12 6 V20"/>'
+};
+function shade(hex,amt){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;const f=v=>Math.max(0,Math.min(255,Math.round(v*(1+amt))));return '#'+[f(r),f(g),f(b)].map(v=>v.toString(16).padStart(2,'0')).join('');}
+let AVN=0;
+function avatarSVG(a,opt){
+  opt=opt||{};const id='avc'+(AVN++),ink='#2b2522',s=a.skin,h=a.hc,sd=shade(s,-.18);
+  const sw='stroke="'+ink+'" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"';
+  let back='',front='';
+  switch(a.hair){
+    case 'afro':back=`<circle cx="60" cy="45" r="31" fill="${h}" ${sw}/><circle cx="36" cy="58" r="11" fill="${h}"/><circle cx="84" cy="58" r="11" fill="${h}"/>`;
+      front=`<path d="M41 52 C42 37 51 33 60 33 C69 33 78 37 79 52 C74 44 67 41 60 41 C53 41 46 44 41 52Z" fill="${h}"/>`;break;
+    case 'short':front=`<path d="M41 55 C39 38 49 30 60 30 C72 30 81 38 79 55 C77 47 74 43 70 41 C63 44 52 44 46 42 C43 45 42 50 41 55Z" fill="${h}" ${sw}/>`;break;
+    case 'fade':front=`<path d="M42 51 C42 38 50 33 60 33 C70 33 78 38 78 51 C75 44 68 41 60 41 C52 41 45 44 42 51Z" fill="${h}" ${sw}/>`;break;
+    case 'side':front=`<path d="M41 54 C39 37 49 30 61 30 C73 30 81 38 79 54 C78 46 75 42 72 40 C64 40 56 38 52 34 C50 40 45 44 41 54Z" fill="${h}" ${sw}/>`;break;
+    case 'curly':back=`<path d="M40 56 C36 40 46 30 60 30 C74 30 84 40 80 56Z" fill="${h}"/>`;
+      front=[[44,42,7],[51,36,7.5],[59,33,8],[67,35,7.5],[74,41,7],[42,50,5],[78,50,5]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${h}" ${sw}/>`).join('');break;
+    case 'bob':back=`<path d="M37 80 C34 60 35 40 46 32 C53 27 67 27 74 32 C85 40 86 60 83 80 Z" fill="${h}" ${sw}/>`;
+      front=`<path d="M41 50 C42 36 50 31 60 31 C70 31 78 36 79 50 C70 45 50 45 41 50Z" fill="${h}"/>`;break;
+    case 'ponytail':back=`<path d="M73 40 C93 44 95 72 85 90 C84 72 80 58 71 49Z" fill="${h}" ${sw}/>`;
+      front=`<path d="M41 54 C39 37 49 30 60 30 C72 30 81 37 79 54 C76 45 70 40 62 38 C55 42 47 45 41 54Z" fill="${h}" ${sw}/>`;break;
+    case 'longcurly':back=`<path d="M33 96 C24 74 28 42 44 31 C54 24 68 24 77 31 C93 42 97 74 88 96Z" fill="${h}" ${sw}/>`+[[32,70,7],[88,70,7],[30,86,7],[90,86,7],[34,52,6],[86,52,6]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${h}"/>`).join('');
+      front=[[45,41,6.5],[52,36,7],[60,34,7],[68,36,7],[75,41,6.5]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${h}"/>`).join('');break;
+    case 'hijab':back=`<path d="M30 104 C29 72 33 34 60 29 C87 34 91 72 90 104Z" fill="${h}" ${sw}/>`;
+      front=`<path d="M41 52 C43 39 51 35 60 35 C69 35 77 39 79 52 C74 45 68 42 60 42 C52 42 46 45 41 52Z" fill="${h}"/><path d="M40 64 C43 82 51 87 60 87 C69 87 77 82 80 64 C82 80 85 94 88 108 L32 108 C35 94 38 80 40 64Z" fill="${h}" ${sw}/><path d="M50 92 C55 98 65 98 70 92" fill="none" stroke="${shade(h,-.25)}" stroke-width="1.4"/>`;break;
+    case 'grey':front=`<path d="M41 60 C39 49 41 42 46 39 L48 51 Z" fill="${h}" ${sw}/><path d="M79 60 C81 49 79 42 74 39 L72 51 Z" fill="${h}" ${sw}/><path d="M50 37 C55 35 65 35 70 37" fill="none" stroke="${h}" stroke-width="2.4"/>`;break;
+  }
+  const noEars=a.hair==='hijab'||a.hair==='bob'||a.hair==='longcurly';
+  const ears=noEars?'':`<ellipse cx="42" cy="60" rx="4" ry="5.5" fill="${s}" ${sw}/><ellipse cx="78" cy="60" rx="4" ry="5.5" fill="${s}" ${sw}/>`;
+  const earrings=a.ear?`<circle cx="${noEars?'41':'42'}" cy="68" r="2.4" fill="#e3b341" stroke="${ink}" stroke-width=".8"/><circle cx="${noEars?'79':'78'}" cy="68" r="2.4" fill="#e3b341" stroke="${ink}" stroke-width=".8"/>`:'';
+  const beard=a.beard?`<path d="M42 61 C43 77 52 83 60 83 C68 83 77 77 78 61 C76 70 70 74 60 74 C50 74 44 70 42 61Z" fill="${h}" ${sw}/><path d="M53 66.5 Q60 63.5 67 66.5 Q60 68.5 53 66.5Z" fill="${h}"/>`:'';
+  const stubble=a.stubble?`<path d="M44 66 C46 77 53 81 60 81 C67 81 74 77 76 66" fill="none" stroke="${shade(h,.4)}" stroke-width="3.2" stroke-opacity=".35" stroke-dasharray="1 1.6"/>`:'';
+  const glasses=a.glasses?`<g fill="rgba(255,255,255,.18)" stroke="${ink}" stroke-width="1.6"><circle cx="52.5" cy="57.5" r="5.6"/><circle cx="67.5" cy="57.5" r="5.6"/></g><path d="M58 57 Q60 55.6 62 57 M46.9 56.5 L42.5 55 M73.1 56.5 L77.5 55" stroke="${ink}" stroke-width="1.4" fill="none"/>`:'';
+  const lapel=a.lapel?`<path d="M51 88 L60 106 L69 88" fill="none" stroke="${shade(a.cloth,-.35)}" stroke-width="1.6"/><path d="M60 94 L60 120" stroke="${shade(a.cloth,-.35)}" stroke-width="1.2"/>`:'';
+  const strap=a.strap?`<path d="M38 92 L50 120" stroke="#5b3b22" stroke-width="5"/>`:'';
+  const ic=ICONS[a.icon]||'';
+  const badge=opt.badge===false?'':`<g><circle cx="95" cy="95" r="14" fill="#fff" stroke="${ink}" stroke-width="1.3"/><g transform="translate(86.6 86.6) scale(.7)" fill="none" stroke="#0d6e6e" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">${ic}</g></g>`;
+  return `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" ${opt.attrs||''} aria-hidden="true">
+  <defs><clipPath id="${id}"><circle cx="60" cy="60" r="58"/></clipPath></defs>
+  <circle cx="60" cy="60" r="58" fill="${a.bg}"/>
+  <g clip-path="url(#${id})"><g filter="url(#sketchy)">
+   ${back}
+   <path d="M53 70 L53 88 L60 95 L67 88 L67 70Z" fill="${sd}" ${sw}/>
+   <path d="M16 122 C18 99 35 89 51 86.5 L60 95 L69 86.5 C85 89 102 99 104 122Z" fill="${a.cloth}" ${sw}/>
+   ${lapel}${strap}
+   ${ears}
+   <ellipse cx="60" cy="58" rx="18" ry="21" fill="${s}" ${sw}/>
+   ${stubble}${beard}
+   <circle cx="49" cy="65" r="3.4" fill="#d8746a" opacity=".22"/><circle cx="71" cy="65" r="3.4" fill="#d8746a" opacity=".22"/>
+   <path d="M48.5 51.5 Q52.5 49.3 56.5 51.2 M63.5 51.2 Q67.5 49.3 71.5 51.5" fill="none" stroke="${a.hair==='grey'?'#8d8780':ink}" stroke-width="1.6" stroke-linecap="round"/>
+   <ellipse cx="52.5" cy="57.5" rx="1.9" ry="2.3" fill="${ink}"/><ellipse cx="67.5" cy="57.5" rx="1.9" ry="2.3" fill="${ink}"/>
+   <path d="M60 58.5 Q58 64 61.2 64.6" fill="none" stroke="${shade(s,-.32)}" stroke-width="1.4" stroke-linecap="round"/>
+   <path d="M54.5 69 Q60 73.2 65.5 69" fill="none" stroke="#7a3b30" stroke-width="1.6" stroke-linecap="round"/>
+   ${front}${earrings}${glasses}
+  </g></g>
+  <circle cx="60" cy="60" r="58" fill="none" stroke="${ink}" stroke-width="1.5" opacity=".55"/>
+  ${badge}
+  </svg>`;
+}
+
+/* ===================================================================
+   TAB 2  Avatars: strip, card view, connection wheel
+   =================================================================== */
+(function(){
+// Each link uses the subject names and codes from the first tab.
+const M=[
+{a:1,subject:"Politics / Law",codes:["PL1","PL2","PL4"],rationale:"How democratic government works, how citizens take part and how public money is raised and spent are the foundations of the planning system"},
+{a:1,subject:"Geography",codes:["G3"],rationale:"Population change and urbanisation are core elements of land use planning"},
+{a:1,subject:"Design & Technology",codes:["DT1","DT9"],rationale:"Understanding users' needs and the social and environmental impact of design supports sustainable development"},
+{a:2,subject:"Biology / Environmental Science",codes:["ES1","ES3"],rationale:"Ecosystem thinking and the human effect on ecosystems help planners respond to environmental challenges"},
+{a:2,subject:"Biology / Environmental Science",codes:["ES4","ES5","ES8"],rationale:"Knowing how environmental systems change, and judging the evidence, is fundamental to responding to global and local change"},
+{a:2,subject:"Chemistry",codes:["CH8"],rationale:"Climate change, resource use and recycling are key global issues with local consequences"},
+{a:2,subject:"Physics",codes:["P4"],rationale:"Energy and power underpin decisions about low-carbon places and energy management"},
+{a:3,subject:"Geography",codes:["G3","AO1"],rationale:"Understanding how places, processes and flows interact at different scales is systems thinking"},
+{a:3,subject:"Geography",codes:["G7"],rationale:"Reading maps, scale and spatial data lets you move between local and regional views"},
+{a:3,subject:"Biology / Environmental Science",codes:["ES1","ES2"],rationale:"The interdependence of organisms and cycles in an ecosystem is a model for how urban and rural systems connect"},
+{a:4,subject:"Politics / Law",codes:["PL2","PL3"],rationale:"Participation, rights and responsibilities are how communities push for positive change"},
+{a:4,subject:"Sociology",codes:["SOC2","SOC3"],rationale:"Understanding inequality, diversity and identity helps address social and political inequalities"},
+{a:4,subject:"Business / Economics",codes:["BE2","BE7"],rationale:"Economic behaviour, competing interests and social impacts explain who gains and who loses from change"},
+{a:4,subject:"History",codes:["H2","H3"],rationale:"Historical patterns of cause, consequence and change help explain inequalities today"},
+{a:5,subject:"Business / Economics",codes:["BE3","BE6"],rationale:"Budgeting, costs and managing risk are directly about viability"},
+{a:5,subject:"Business / Economics",codes:["BE5","BE8"],rationale:"Using evidence to evaluate alternatives supports risk assessment and balancing different agendas"},
+{a:5,subject:"Biology / Environmental Science",codes:["ES4","ES5","ES8"],rationale:"Environmental risks, limited resources and the implications of change all need to be weighed up"},
+{a:6,subject:"Politics / Law",codes:["PL4"],rationale:"Understanding the legal system and how law deals with complex problems is fundamental to planning in legal contexts"},
+{a:6,subject:"Politics / Law",codes:["PL1"],rationale:"Political institutions and decision-making are the frameworks planners work within"},
+{a:6,subject:"Politics / Law",codes:["PL6","PL7"],rationale:"Analysing and evaluating political information builds the skills to construct arguments and reach judgements"},
+{a:7,subject:"Politics / Law",codes:["PL2"],rationale:"Democracy and participation, including volunteering, are direct experience of community engagement"},
+{a:7,subject:"Sociology",codes:["SOC3"],rationale:"Engaging with diverse communities requires understanding identity and culture"},
+{a:7,subject:"English",codes:["EN4","EN8"],rationale:"Comparing perspectives and communicating with different audiences is key to community engagement"},
+{a:7,subject:"Design & Technology",codes:["DT1"],rationale:"Researching different users' needs supports engaging communities in change"},
+{a:8,subject:"Geography",codes:["G8","G9"],rationale:"Fieldwork and independent investigation build research skills"},
+{a:8,subject:"Geography",codes:["G7","G5","AO3"],rationale:"GIS and critical use of data are digital tools for spatial research"},
+{a:8,subject:"Physics",codes:["P8","P9"],rationale:"Experimental design and evaluating evidence develop the habit of judging evidence quality"},
+{a:8,subject:"Chemistry",codes:["CH6","CH7"],rationale:"Investigating and weighing uncertainty in results supports evidence-based research"},
+{a:8,subject:"Biology / Environmental Science",codes:["ES6","ES7"],rationale:"Sampling and presenting environmental data support evidence-based research"},
+{a:8,subject:"Computer Science",codes:["CS1","CS4","CS7"],rationale:"Computational thinking, data and building digital solutions are the basis of smart cities and modelling"},
+{a:9,subject:"Art & Design",codes:["AD4","AD6"],rationale:"Recording observations and critically evaluating work builds design judgement"},
+{a:9,subject:"Design & Technology",codes:["DT1","DT4","DT5"],rationale:"Researching users, then developing and communicating design ideas, is how places are designed"},
+{a:9,subject:"Design & Technology",codes:["DT7","DT8","DT9"],rationale:"Making, testing and evaluating designs, and thinking about their long-term impact on people and planet"},
+{a:9,subject:"Mathematics",codes:["M3","M8"],rationale:"Geometry and modelling are technical skills for spatial design and place-making"},
+{a:10,subject:"English",codes:["EN7","EN8"],rationale:"Constructing arguments and presenting them well underpins communication, negotiation and leadership"},
+{a:10,subject:"Business / Economics",codes:["BE1","BE2"],rationale:"Understanding how organisations work and respond to issues builds professional awareness"},
+{a:10,subject:"Philosophy",codes:["PH2","PH3"],rationale:"Moral philosophy and applied ethics support ethical professional behaviour"},
+{a:10,subject:"Philosophy",codes:["PH5","PH6"],rationale:"Analysing arguments and forming reasoned judgements support reflective practice"},
+{a:10,subject:"Psychology",codes:["PSY1","PSY2"],rationale:"Understanding people and group behaviour supports professional practice"},
+{a:1,subject:"Geography",codes:["G4"],rationale:"Place meanings and place-making show what planning is for and how places are shaped"},
+{a:3,subject:"Mathematics",codes:["M8"],rationale:"Mathematical modelling describes how the parts of a system affect one another"},
+{a:3,subject:"Computer Science",codes:["CS1","CS7"],rationale:"Computational thinking breaks a complex system into parts and shows how they fit together"},
+{a:4,subject:"Philosophy",codes:["PH3"],rationale:"Applied ethics asks what a fair outcome looks like, the starting point for challenging inequality"},
+{a:5,subject:"Mathematics",codes:["M8","M10"],rationale:"Modelling, and testing its assumptions, is how risks and their consequences are estimated"},
+{a:6,subject:"Business / Economics",codes:["BE2"],rationale:"Balancing stakeholders' competing interests is what planning rules and institutions are designed to do"},
+{a:6,subject:"Sociology",codes:["SOC4"],rationale:"Understanding power and social structures explains how institutions shape places"},
+{a:7,subject:"Art & Design",codes:["AD8"],rationale:"Presenting ideas visually helps communities understand, and shape, proposed change"},
+{a:7,subject:"Psychology",codes:["PSY2"],rationale:"Understanding social influence and group behaviour helps when working with communities"},
+{a:8,subject:"Mathematics",codes:["M5","M6"],rationale:"Statistics and data interpretation turn evidence into answers"},
+{a:9,subject:"History",codes:["H4"],rationale:"Judging historical significance helps decide what to keep when designing better places"}
+];
+// T level links (codes from the first tab)
+const TN=CUR.t.cats.map(c=>c.subject);
+[[0,0,["T1.9"],"Regulations, standards and how the construction industry works are the backdrop to the planning system"],
+ [0,1,["T1.10"],"The environmental impact of construction connects global climate goals to local sites"],
+ [0,4,["T1.12"],"Budgeting, procurement and risk management are how a scheme's viability and risks are judged"],
+ [0,5,["T1.9"],"Working within building regulations, standards and legislation is everyday work with rules and institutions"],
+ [0,7,["T1.3","T1.5"],"Measuring and surveying the built environment, and managing its data, builds an evidence base"],
+ [0,8,["T1.4","T1.8","T1.13"],"Design principles and designing the built environment lead directly to making better places"],
+ [0,9,["T1.11"],"Professional relationships and corporate social responsibility build ethical practice"],
+ [1,1,["T2.2","T2.3","T2.4"],"Managing soil, water and biodiversity is environmental change at the scale of a real site"],
+ [1,2,["T2.1"],"Land-based businesses and supply chains are systems that link rural and urban areas"],
+ [1,4,["T2.6","T2.8"],"Finance, markets and biosecurity risks all have to be weighed in decisions about land"],
+ [1,5,["T2.5"],"Policy, legislation and regulation shape what land can be used for"],
+ [1,6,["T2.9"],"Working with stakeholders is how changes to land use get agreed"],
+ [2,2,["T3.3","T3.6"],"Computational problem solving and digital environments help model complex urban systems"],
+ [2,6,["T3.10"],"User-centred design of digital tools can widen who takes part in planning"],
+ [2,7,["T3.2"],"Data and digital analysis turn information about places into evidence"],
+ [2,9,["T3.5"],"Legislation, privacy and data ethics underpin responsible professional practice"]
+].forEach(([t,a,codes,r])=>M.push({a:a+1,subject:TN[t],codes,rationale:r,tl:1}));
+window.PMAP=M;
+const CODE={},SUBJ_CODE={};
+CUR.a.cats.forEach(c=>{SUBJ_CODE[c.subject]=c.items[0][0].replace(/\d+$/,'');c.items.forEach(([k,t])=>CODE[k]={t,geo:!!c.geo});});
+CUR.t.cats.forEach((c,i)=>{SUBJ_CODE[c.subject]='T'+(i+1);c.items.forEach(([k,t])=>CODE[k]={t,geo:false});});
+SUBJ_CODE['Geography']='G';
+const SUBJ=CUR.a.cats.map(c=>c.subject).filter(s=>M.some(m=>m.subject===s));
+const SHORT={"Art & Design":"Art & Design","Biology / Environmental Science":"Biol / Env Sci","Business / Economics":"Bus / Econ","Chemistry":"Chemistry","Computer Science":"Comp Sci","Design & Technology":"D&T","English":"English","Geography":"Geography","History":"History","Mathematics":"Maths","Philosophy":"Philosophy","Physics":"Physics","Politics / Law":"Politics / Law","Psychology":"Psychology","Sociology":"Sociology"};
+const a2s={},s2a={};
+M.forEach(m=>{const i=m.a-1;(a2s[i]=a2s[i]||new Set()).add(m.subject);(s2a[m.subject]=s2a[m.subject]||new Set()).add(i);});
+
+/* strip */
+let SEL=null;
+$('avStrip').innerHTML=AVATARS.map((a,i)=>`<button type="button" class="avbtn" data-av="${i}" aria-pressed="false" aria-label="${esc(a.name)}: ${esc(a.tag)}">${avatarSVG(a)}<span class="nm">${esc(a.name.replace('The ',''))}</span></button>`).join('');
+$('avStrip').addEventListener('click',e=>{const b=e.target.closest('[data-av]');if(!b)return;const i=+b.dataset.av;openCard(SEL===i?null:i);});
+window.openPersonaCard=(i)=>openCard(i,true);
+function openCard(i,scroll){
+  SEL=i;
+  document.querySelectorAll('.avbtn').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.av===i));
+  const box=$('avCard');
+  if(i==null){box.hidden=true;$('stripHint').hidden=false;return;}
+  $('stripHint').hidden=true;
+  const a=AVATARS[i],ms=M.filter(m=>m.a===i+1),subs=[...a2s[i]].sort();
+  box.innerHTML=`<div class="profile">${avatarSVG(a)}<div><p class="eyebrow" style="margin-bottom:4px">Persona ${i+1} of 10</p><h2>${esc(a.name)}</h2><p class="tag">${esc(a.name)} ${esc(a.tag)}</p><p class="desc">${esc(a.desc)}</p>
+    <span class="pill path">Career pathway: ${esc(a.path)}</span><span class="pill">${subs.length} subject${subs.length===1?'':'s'}: ${esc(subs.join(', '))}</span></div></div>
+    <div class="cardhead"><span class="count">${ms.length} curriculum link${ms.length===1?'':'s'} build towards ${esc(a.name)}</span><button class="btn" type="button" id="closeCard">Close card</button></div>
+    <div class="mapgrid">${ms.map(m=>`<article class="mcard"><span class="sb">${esc(m.subject)}</span>
+      <div class="st">Curriculum points</div><ul class="ovpts">${m.codes.map(k=>`<li><span class="code ${CODE[k]&&CODE[k].geo?'geo':''}">${esc(k)}</span> ${esc(CODE[k]?CODE[k].t:'')}</li>`).join('')}</ul>
+      <div class="st">Connection to urban planning</div><p class="why">${esc(m.rationale)}</p></article>`).join('')}</div>`;
+  box.hidden=false;
+  $('closeCard').addEventListener('click',()=>openCard(null));
+  if(scroll)box.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+/* wheel */
+const W={cx:360,cy:360,av:{ri:250,ro:342},sub:{ri:168,ro:232},pad:1.2};
+const COL={av:'#0d6e6e',avSel:'#073f3f',sub:'#4f8fa6',subSel:'#1f5a70',gold:'#d99a1e'};
+const NS='http://www.w3.org/2000/svg';
+const svg=$('wheelSvg');let wsel=null,zoom=1;
+const pol=(r,d)=>{const t=(d-90)*Math.PI/180;return[W.cx+r*Math.cos(t),W.cy+r*Math.sin(t)];};
+function arc(ri,ro,a0,a1){const[x1,y1]=pol(ro,a0),[x2,y2]=pol(ro,a1),[x3,y3]=pol(ri,a1),[x4,y4]=pol(ri,a0),l=a1-a0>180?1:0;return`M${x1} ${y1}A${ro} ${ro} 0 ${l} 1 ${x2} ${y2}L${x3} ${y3}A${ri} ${ri} 0 ${l} 0 ${x4} ${y4}Z`;}
+function build(){
+  let h='<g id="lArcs">';
+  const sa=360/AVATARS.length;
+  AVATARS.forEach((a,i)=>{const a0=i*sa+W.pad/2,a1=(i+1)*sa-W.pad/2;h+=`<path class="wseg" data-t="av" data-id="${i}" d="${arc(W.av.ri,W.av.ro,a0,a1)}" fill="${COL.av}" stroke="#fff" stroke-width="2"><title>${esc(a.name)} ${esc(a.tag)}</title></path>`;});
+  const ss=360/SUBJ.length;
+  SUBJ.forEach((s,i)=>{const a0=i*ss+W.pad/2,a1=(i+1)*ss-W.pad/2;h+=`<path class="wseg" data-t="sub" data-id="${esc(s)}" d="${arc(W.sub.ri,W.sub.ro,a0,a1)}" fill="${COL.sub}" stroke="#fff" stroke-width="2"><title>${esc(s)}</title></path>`;});
+  h+=`<circle id="wCentre" cx="${W.cx}" cy="${W.cy}" r="${W.sub.ri-4}" fill="#fff" style="cursor:pointer"/></g><g id="lLines"></g><g id="lLabels">`;
+  AVATARS.forEach((a,i)=>{const mid=i*sa+sa/2,[fx,fy0]=pol(298,mid),fy=fy0-9,nx=fx,ny=fy+33,sz=50;
+    h+=`<g class="wface" data-t="av" data-id="${i}" style="pointer-events:none"><svg x="${fx-sz/2}" y="${fy-sz/2}" width="${sz}" height="${sz}" viewBox="0 0 120 120" overflow="visible">${avatarSVG(a,{badge:false}).replace(/^<svg[^>]*>/,'').replace(/<\/svg>\s*$/,'')}</svg>
+      <text class="wname" x="${nx}" y="${ny}" text-anchor="middle" dominant-baseline="central">${esc(a.short)}</text></g>`;});
+  SUBJ.forEach((s,i)=>{const mid=i*ss+ss/2,[lx,ly]=pol((W.sub.ri+W.sub.ro)/2,mid);let rot=mid;if(mid>90&&mid<270)rot+=180;
+    h+=`<text class="wlabel" data-t="sub" data-id="${esc(s)}" x="${lx}" y="${ly}" text-anchor="middle" dominant-baseline="central" transform="rotate(${rot} ${lx} ${ly})">${esc(SHORT[s])}</text>`;});
+  h+=`<text id="cMain" x="${W.cx}" y="${W.cy-8}" text-anchor="middle" style="font:700 22px Spectral,serif;fill:#16292f;pointer-events:none"></text><text id="cSub" x="${W.cx}" y="${W.cy+18}" text-anchor="middle" style="font:500 12.5px Inter;fill:#5f6f73;pointer-events:none"></text></g>`;
+  svg.innerHTML=h;
+  svg.querySelectorAll('.wseg').forEach(p=>p.addEventListener('click',e=>{e.stopPropagation();const t=p.dataset.t,id=t==='av'?+p.dataset.id:p.dataset.id;pick(t,id);}));
+  $('wCentre').addEventListener('click',e=>{e.stopPropagation();pick(null);});
+  $('wheelSelect').innerHTML='<option value="">Choose&hellip;</option><optgroup label="Planning personas">'+AVATARS.map((a,i)=>`<option value="av:${i}">${esc(a.name)}</option>`).join('')+'</optgroup><optgroup label="Subjects">'+SUBJ.map(s=>`<option value="sub:${esc(s)}">${esc(s)}</option>`).join('')+'</optgroup>';
+  pick(null);
+}
+function pick(t,id){
+  if(t&&wsel&&wsel.t===t&&wsel.id===id)t=null;
+  wsel=t?{t,id}:null;
+  const lines=$('lLines');lines.innerHTML='';
+  const conn=!wsel?null:(t==='av'?a2s[id]:s2a[id]);
+  svg.querySelectorAll('.wseg').forEach(p=>{
+    const pt=p.dataset.t,pid=pt==='av'?+p.dataset.id:p.dataset.id;
+    let fill=pt==='av'?COL.av:COL.sub,dim=false;
+    if(wsel){if(pt===t&&pid===id)fill=pt==='av'?COL.avSel:COL.subSel;else if(pt!==t&&conn&&conn.has(pid))fill=COL.gold;else dim=true;}
+    p.setAttribute('fill',fill);p.classList.toggle('dim',dim);});
+  svg.querySelectorAll('.wface,.wlabel').forEach(l=>{const lt=l.dataset.t,lid=lt==='av'?+l.dataset.id:l.dataset.id;
+    const keep=!wsel||(lt===t&&lid===id)||(lt!==t&&conn&&conn.has(lid));l.classList.toggle('dim-l',!keep);});
+  const cm=$('cMain'),cs=$('cSub');
+  if(!wsel){cm.textContent='Explore';cs.textContent='click a segment';$('wheelSelect').value='';info(null);return;}
+  // lines
+  const selOrder=t==='av'?AVATARS.map((_,i)=>i):SUBJ,oth=t==='av'?SUBJ:AVATARS.map((_,i)=>i);
+  const sSeg=360/selOrder.length,oSeg=360/oth.length,sMid=selOrder.indexOf(id)*sSeg+sSeg/2;
+  const[sx,sy]=pol(t==='av'?W.av.ri:W.sub.ro,sMid);
+  conn.forEach(c=>{const ci=oth.indexOf(c);if(ci<0)return;const[cx,cy]=pol(t==='av'?W.sub.ro:W.av.ri,ci*oSeg+oSeg/2);
+    const qx=W.cx+((sx+cx)/2-W.cx)*.55,qy=W.cy+((sy+cy)/2-W.cy)*.55;
+    const p=document.createElementNS(NS,'path');p.setAttribute('d',`M${sx} ${sy}Q${qx} ${qy} ${cx} ${cy}`);p.setAttribute('class','wline');lines.appendChild(p);});
+  if(t==='av'){cm.textContent=AVATARS[id].short;cs.textContent=`${conn.size} subjects`;}else{cm.textContent=SHORT[id];cs.textContent=`${conn.size} persona${conn.size===1?'':'s'}`;}
+  $('wheelSelect').value=t+':'+id;info(wsel);
+}
+function info(sel){
+  const el=$('wheelInfo');
+  if(!sel){el.innerHTML='<p class="hintbar" style="margin-top:18px">Select a persona or a subject to see its connections.</p>';return;}
+  if(sel.t==='av'){const a=AVATARS[sel.id],subs=[...a2s[sel.id]].sort();
+    el.innerHTML=`<div class="wi-title">${esc(a.name)} ${esc(a.tag)} It connects to ${subs.length} subject${subs.length===1?'':'s'}:</div><div class="chips">${subs.map(s=>`<span class="chip subj"><span class="code">${esc(SUBJ_CODE[s]||'')}</span>${esc(s)}</span>`).join('')}</div><p style="margin-top:16px"><button class="btn" type="button" data-open="${sel.id}">Open ${esc(a.name)} card</button></p>`;}
+  else{const av=[...s2a[sel.id]].sort((x,y)=>x-y);
+    el.innerHTML=`<div class="wi-title">${esc(sel.id)} builds towards ${av.length} persona${av.length===1?'':'s'}:</div><div class="chips">${av.map(i=>`<button type="button" class="chip" data-open="${i}" title="Open card">${avatarSVG(AVATARS[i],{badge:false})}${esc(AVATARS[i].name)}</button>`).join('')}</div><p class="hintbar" style="margin:12px 0 0">Click a persona to open its card.</p>`;}
+  el.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openCard(+b.dataset.open,true)));
+}
+$('wheelSelect').addEventListener('change',e=>{const v=e.target.value;if(!v){pick(null);return;}const k=v.indexOf(':'),t=v.slice(0,k),id=v.slice(k+1);pick(t,t==='av'?+id:id);});
+svg.addEventListener('click',()=>pick(null));
+function applyZoom(){const w=720/zoom;svg.setAttribute('viewBox',`${360-w/2} ${360-w/2} ${w} ${w}`);$('zLabel').textContent=Math.round(zoom*100)+'%';}
+$('zIn').addEventListener('click',()=>{zoom=Math.min(3,zoom*1.2);applyZoom();});
+$('zOut').addEventListener('click',()=>{zoom=Math.max(.6,zoom/1.2);applyZoom();});
+$('zReset').addEventListener('click',()=>{zoom=1;applyZoom();});
+build();applyZoom();
+})();
+
+/* ===================================================================
+   TAB 3  Personas x subjects matrix (by subject / by school project)
+   =================================================================== */
+(function(){
+const M=window.PMAP, NP=AVATARS.length, MAX=3;
+const CAT={},CODE={};CUR.a.cats.concat(CUR.t.cats).forEach(c=>{CAT[c.subject]=c;c.items.forEach(([k,t])=>CODE[k]=t);});
+const ASUBS=CUR.a.cats.map(c=>c.subject).filter(s=>M.some(m=>m.subject===s)),TSUBS=CUR.t.cats.map(c=>c.subject),SUBS=ASUBS.concat(TSUBS);
+const DN=s=>s.replace(/ \(.*\)$/,'');
+const PFX={};CUR.a.cats.forEach(c=>PFX[c.subject]=c.items[0][0].replace(/\d+$/,''));PFX['Geography']='G';CUR.t.cats.forEach((c,i)=>PFX[c.subject]='T'+(i+1));
+const V={};SUBS.forEach(s=>V[s]=Array(NP).fill(0));
+const L={};M.forEach(m=>{V[m.subject][m.a-1]+=m.codes.length;(L[m.subject+'|'+(m.a-1)]=L[m.subject+'|'+(m.a-1)]||[]).push(m);});
+const PROJ={
+"Politics / Law|0":"Mock planning committee on a local application","Geography|0":"How has regeneration changed Bristol's Harbourside?","Design & Technology|0":"Design brief for a community building, led by users' needs",
+"Biology / Environmental Science|1":"Biodiversity survey of a school or local green space","Chemistry|1":"Life-cycle assessment of a building material","Physics|1":"Could solar panels power our school?",
+"Geography|2":"Tracing the Bristol Avon from source to the Severn Estuary","Biology / Environmental Science|2":"Mapping a local food web and what disrupts it","Mathematics|2":"Modelling traffic flow at a busy junction","Computer Science|2":"Simulating how people move through a building",
+"Politics / Law|3":"Campaign for a safer route to school","Sociology|3":"Who uses the local park, and who doesn't?","Business / Economics|3":"Who gains from out-of-town shopping such as Cribbs Causeway?","History|3":"How did post-war rebuilding change Bristol's Broadmead?","Philosophy|3":"Is gentrification ever fair? An ethics debate",
+"Business / Economics|4":"Is a local development financially viable?","Biology / Environmental Science|4":"Flood risk assessment of a site beside the River Avon","Mathematics|4":"Modelling sea-level rise scenarios for the Severn Estuary",
+"Politics / Law|5":"How a local planning decision was made: a case study","Business / Economics|5":"Stakeholder map for a contested development","Sociology|5":"Who holds power in local decisions?",
+"Politics / Law|6":"Youth council or community volunteering project","Sociology|6":"Interviewing residents about belonging","English|6":"Writing a consultation leaflet for local residents","Design & Technology|6":"Co-designing a play space with younger pupils","Art & Design|6":"Exhibition boards for a community proposal","Psychology|6":"How group discussion changes people's views",
+"Geography|7":"Geography NEA on a local regeneration question","Physics|7":"Measuring noise or temperature across the school site","Chemistry|7":"Testing air quality inside and outside Bristol's Clean Air Zone","Biology / Environmental Science|7":"Sampling biodiversity along a transect","Computer Science|7":"Analysing open data with a short program","Mathematics|7":"Statistical analysis of a local survey",
+"Art & Design|8":"Sketchbook study of a favourite street, such as Gloucester Road","Design & Technology|8":"Low-carbon community building prototype","Mathematics|8":"Scale drawings and plans of a building or space","History|8":"What makes a historic building worth keeping? A Bristol case study",
+"English|9":"Persuasive speech or debate on a local issue","Business / Economics|9":"Work experience reflection or business case study","Philosophy|9":"Ethics essay: should we build on the green belt?","Psychology|9":"Survey on wellbeing and the places we spend time"};
+const ALSO={"Chemistry|7":[4],"Biology / Environmental Science|4":[1],"Geography|7":[0],"Geography|0":[3],"Politics / Law|0":[5],"Politics / Law|5":[0],
+"Business / Economics|3":[4],"History|3":[8],"History|8":[4],"Design & Technology|6":[8],"Art & Design|6":[8],"Biology / Environmental Science|1":[7],
+"Mathematics|2":[4],"Computer Science|7":[2],"Sociology|3":[6],"Sociology|6":[7],"English|9":[3],"Philosophy|3":[9],"Psychology|9":[7],"Mathematics|4":[1],"Physics|1":[4]};
+const TN3=CUR.t.cats.map(c=>c.subject);
+[[0,0,"How do building regulations and planning permission differ? A case study"],[0,1,"Measuring the embodied carbon of a small building"],[0,4,"Costing and risk register for a small development"],[0,5,"Checking a house extension against building regulations"],[0,7,"Measured survey of a building or site"],[0,8,"Designing a small housing scheme for an employer brief"],[0,9,"Reflective log from your industry placement"],
+ [1,1,"Soil and biodiversity improvement plan for a farm"],[1,2,"Mapping a local food supply chain"],[1,4,"Business case for diversifying a farm"],[1,5,"How land-use rules affect a farm or estate"],[1,6,"Consulting neighbours about changes to a rural site"],
+ [2,2,"Prototyping a digital map of local services"],[2,6,"An app to collect residents' views on a local scheme"],[2,7,"Analysing a Bristol open dataset"],[2,9,"Data protection plan for a community app"]
+].forEach(([t,p,title])=>PROJ[TN3[t]+'|'+p]=title);
+let sel=new Set([0]),cur=null;
+const RAMP=[['#f1f4f3','#aab5b3'],['#e0efec','#0a5656'],['#b7d9d4','#0a5656'],['#7fbab4','#073f3f'],['#2f8f8a','#fff'],['#0d6e6e','#fff']];
+const rc=v=>v===0?RAMP[0]:v===1?RAMP[1]:v===2?RAMP[2]:v===3?RAMP[3]:v<6?RAMP[4]:RAMP[5];
+
+/* view switch */
+const mvBtns=[...document.querySelectorAll('[data-mv]')];
+function setMV(v){mvBtns.forEach(b=>b.setAttribute('aria-selected',b.dataset.mv===v));$('mv-subject').hidden=v!=='subject';$('mv-mine').hidden=v!=='mine';$('mv-project').hidden=v!=='project';}
+mvBtns.forEach(b=>b.addEventListener('click',()=>setMV(b.dataset.mv)));
+
+/* ---- by subject ---- */
+$('hleg').innerHTML='<span>Curriculum points linked:</span>'+[['none',0],['1',1],['2',2],['3',3],['4–5',4],['6+',6]].map(([l,v])=>`<span><i style="background:${rc(v)[0]};${v?'':'border:1px solid var(--line)'}"></i>${l}</span>`).join('')+'<span>· Click a cell for its codes</span>';
+$('pkRow').innerHTML=AVATARS.map((a,i)=>`<button type="button" class="pk" data-p="${i}" aria-pressed="false">${avatarSVG(a,{badge:false})}${esc(a.short)}</button>`).join('');
+let warn='';
+$('pkRow').addEventListener('click',e=>{const b=e.target.closest('[data-p]');if(!b)return;const i=+b.dataset.p;
+  if(sel.has(i)){sel.delete(i);warn='';}
+  else if(sel.size>=MAX){warn=`You can compare up to three personas. Remove one to add ${AVATARS[i].name}.`;}
+  else{sel.add(i);warn='';}
+  cur=null;render();});
+$('pkNone').addEventListener('click',()=>{sel=new Set();warn='';cur=null;render();});
+function render(){
+  const full=sel.size>=MAX;
+  document.querySelectorAll('.pk').forEach(b=>{const on=sel.has(+b.dataset.p);b.setAttribute('aria-pressed',on);b.setAttribute('aria-disabled',full&&!on);});
+  const cols=[...sel].sort((a,b)=>a-b),n=cols.length;
+  $('pkMode').innerHTML=n===0?'No personas selected':n===1?`Showing <b>${esc(AVATARS[cols[0]].name)}</b>`:`Comparing <b>${n} of 3</b> personas`;
+  $('pkHint').textContent=warn||(n<MAX?`Choose up to three personas to compare (${MAX-n} more available).`:'Three personas selected. Remove one to choose another.');
+  $('pkHint').style.color=warn?'var(--app)':'';
+  const g=$('hmx');
+  if(!n){g.style.gridTemplateColumns='1fr';g.innerHTML='<p class="empty">Choose one to three personas above.</p>';$('hdet').hidden=true;return;}
+  const cw=n===1?'minmax(90px,140px)':'minmax(76px,110px)';
+  g.style.gridTemplateColumns=`minmax(150px,210px) repeat(${n},${cw}) 48px minmax(240px,1fr)`;
+  const tot=s=>cols.reduce((a,i)=>a+V[s][i],0);
+  const srt=l=>l.slice().sort((a,b)=>tot(b)-tot(a)||a.localeCompare(b));
+  const rows=[['AS and A levels',srt(ASUBS)],['T levels',srt(TSUBS)]];
+  let h='<div class="hd tl">Subject</div>'+cols.map(i=>`<div class="hd">${avatarSVG(AVATARS[i],{badge:false})}${esc(AVATARS[i].short)}</div>`).join('')+'<div class="hd">Total</div><div class="hd tl" style="padding-left:12px">Projects you might have worked on in school</div>';
+  rows.forEach(([gname,list])=>{h+=`<div class="grp">${gname}</div>`;list.forEach(s=>{const t=tot(s),off=t===0?' row-off':'';
+    h+=`<div class="sn${off}"><span class="snl"><span class="code ${s==='Geography'?'geo':''} ${PFX[s][0]==='T'&&/^T\d$/.test(PFX[s])?'t':''}">${esc(PFX[s])}</span>${esc(DN(s))}</span></div>`;
+    cols.forEach(i=>{const v=V[s][i],[bg,fg]=rc(v),k=s+'|'+i;h+=`<button type="button" class="cl${v?'':' z'}${off}${cur===k?' on':''}" data-k="${esc(k)}" style="background:${bg};color:${fg}" title="${esc(DN(s))} → ${esc(AVATARS[i].short)}: ${v} point${v===1?'':'s'}" ${v?'':'tabindex="-1" aria-disabled="true"'}>${v||'·'}</button>`;});
+    h+=`<div class="tt${off}"><span>${t||'–'}</span></div>`;
+    const hit=cols.filter(i=>V[s][i]>0);
+    h+=!t?'<div class="pj none">Not linked to this selection</div>':n===1?`<div class="pj"><b>${esc(PROJ[s+'|'+hit[0]])}</b></div>`:`<div class="pj"><ul>${hit.map(i=>`<li><span class="who">${esc(AVATARS[i].short)}</span>${esc(PROJ[s+'|'+i])}</li>`).join('')}</ul></div>`;
+  });});
+  const ct=cols.map(i=>SUBS.reduce((a,s)=>a+V[s][i],0));
+  h+='<div class="sn noline" style="color:var(--muted)">Total</div>'+ct.map(x=>`<div class="tt" style="color:var(--ink)">${x}</div>`).join('')+`<div class="tt" style="color:var(--ink)">${ct.reduce((a,b)=>a+b,0)}</div><div></div>`;
+  g.innerHTML=h;
+  g.querySelectorAll('.cl:not(.z)').forEach(b=>b.addEventListener('click',()=>{cur=cur===b.dataset.k?null:b.dataset.k;render();}));
+  const d=$('hdet');d.hidden=false;
+  if(!cur){d.innerHTML='<span class="hintbar" style="margin:0">Click a shaded cell to see which curriculum points make the link, and why.</span>';return;}
+  const [s,i]=cur.split('|'),ls=L[cur]||[];
+  d.innerHTML=`<b>${esc(DN(s))} → ${esc(AVATARS[+i].name)}</b><div style="margin-top:4px;color:var(--muted)">Project you might have worked on: <b style="color:var(--ink)">${esc(PROJ[cur])}</b></div>`+ls.map(m=>`<ul>${m.codes.map(k=>`<li><span class="code">${esc(k)}</span> ${esc(CODE[k]||'')}</li>`).join('')}</ul><span class="why">${esc(m.rationale)}</span>`).join('');
+}
+
+/* ---- by school project ---- */
+const PP=['pp0','pp1','pp2'];
+const opts='<option value="">Choose a project&hellip;</option>'+ASUBS.slice().sort().concat(TSUBS).map(s=>{const ks=Object.keys(PROJ).filter(k=>k.split('|')[0]===s).sort((a,b)=>PROJ[a].localeCompare(PROJ[b]));return ks.length?`<optgroup label="${TSUBS.includes(s)?'T level: ':''}${esc(DN(s))}">${ks.map(k=>`<option value="${esc(k)}">${esc(PROJ[k])}</option>`).join('')}</optgroup>`:'';}).join('');
+PP.forEach(id=>{$(id).innerHTML=opts;$(id).addEventListener('change',renderPP);});
+function renderPP(){
+  const picks=PP.map(id=>$(id).value).filter(Boolean);
+  // stop the same project being chosen twice
+  PP.forEach(id=>{const me=$(id).value;[...$(id).options].forEach(o=>{if(o.value)o.disabled=o.value!==me&&picks.includes(o.value);});});
+  const out=$('ppOut');
+  if(!picks.length){out.innerHTML='<div class="panel pad"><p class="empty" style="padding:0">Choose a project above to meet the persona it points to. Some projects fit more than one persona.</p></div>';return;}
+  const by={};picks.forEach(k=>{const p=+k.split('|')[1];(by[p]=by[p]||[]).push(k);});
+  const ps=Object.keys(by).map(Number);
+  const extra=[...new Set(picks.flatMap(k=>ALSO[k]||[]))].filter(q=>!ps.includes(q));
+  let h=`<div class="psum"><span>Your project${picks.length>1?'s point':' points'} to <b>${ps.map(p=>esc(AVATARS[p].name)).join('</b>, <b>')}</b>.${extra.length?` ${picks.length>1?'They also fit':'It also fits'} ${extra.map(q=>esc(AVATARS[q].name)).join(', ')}.`:''}</span><button class="btn" type="button" id="ppToMatrix">See ${ps.length>1?'these personas':'this persona'} in the subject matrix</button></div><div class="pres">`;
+  ps.forEach(p=>{const a=AVATARS[p];
+    h+=`<article class="pcardx"><div class="top">${avatarSVG(a)}<div><h3>${esc(a.name)}</h3><p class="tg">${esc(a.name)} ${esc(a.tag)}</p></div></div>`;
+    by[p].forEach(k=>{const s=k.split('|')[0];
+      h+=`<div class="via">Because you enjoyed <span class="projt">${esc(PROJ[k])}</span> in <b>${esc(DN(s))}${TSUBS.includes(s)?' (T level)':''}</b></div>`+((ALSO[k]||[]).length?`<div class="also">This project also fits ${(ALSO[k]).map(q=>`<button type="button" class="chip" data-pcard="${q}">${avatarSVG(AVATARS[q],{badge:false})}${esc(AVATARS[q].name)}</button>`).join(' ')}</div>`:'')+(L[k]||[]).map(m=>`<ul>${m.codes.map(c=>`<li><span class="code">${esc(c)}</span> ${esc(CODE[c]||'')}</li>`).join('')}</ul><div class="why">${esc(m.rationale)}</div>`).join('');});
+    h+=`<p style="margin:4px 0 0"><button class="btn" type="button" data-pcard="${p}">Open ${esc(a.name)} card</button></p></article>`;});
+  out.innerHTML=h+'</div>';
+  out.querySelectorAll('[data-pcard]').forEach(b=>b.addEventListener('click',()=>{showTab('avatars',true);window.openPersonaCard(+b.dataset.pcard);}));
+  $('ppToMatrix').addEventListener('click',()=>{sel=new Set(ps);warn='';cur=null;render();setMV('subject');window.scrollTo({top:0});});
+}
+
+/* ---- by my subjects ---- */
+const MS=['ms0','ms1','ms2','ms3'];
+const msOpts='<option value="">Choose a subject&hellip;</option><optgroup label="AS and A levels">'+ASUBS.slice().sort().map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join('')+'</optgroup><optgroup label="T levels">'+TSUBS.map(s=>`<option value="${esc(s)}">${esc(DN(s))}</option>`).join('')+'</optgroup>';
+MS.forEach(id=>{$(id).innerHTML=msOpts;$(id).addEventListener('change',renderMS);});
+function renderMS(){
+  const picks=MS.map(id=>$(id).value).filter(Boolean);
+  MS.forEach(id=>{const me=$(id).value;[...$(id).options].forEach(o=>{if(o.value)o.disabled=o.value!==me&&picks.includes(o.value);});});
+  const out=$('msOut');
+  if(!picks.length){out.innerHTML='<div class="panel pad"><p class="empty" style="padding:0">Choose your subjects above to see which personas they lead to.</p></div>';return;}
+  const score=AVATARS.map((_,p)=>({p,pts:picks.reduce((a,s)=>a+V[s][p],0),n:picks.filter(s=>V[s][p]>0).length})).filter(x=>x.pts>0).sort((a,b)=>b.n-a.n||b.pts-a.pts||a.p-b.p);
+  if(!score.length){out.innerHTML='<div class="panel pad"><p class="empty" style="padding:0">No links yet for these subjects.</p></div>';return;}
+  const top=score.slice(0,MAX),rest=score.slice(MAX);
+  let h=`<div class="psum"><span>Your subjects lead most strongly to <b>${top.map(x=>esc(AVATARS[x.p].name)).join('</b>, <b>')}</b>.${rest.length?` They also link to ${rest.map(x=>esc(AVATARS[x.p].name)).join(', ')}.`:''}</span><button class="btn" type="button" id="msToMatrix">See ${top.length>1?'these personas':'this persona'} in the matrix</button></div><div class="pres">`;
+  top.forEach(({p,pts,n})=>{const a=AVATARS[p];
+    h+=`<article class="pcardx"><div class="top">${avatarSVG(a)}<div><h3>${esc(a.name)}</h3><p class="tg">${esc(a.name)} ${esc(a.tag)}</p></div></div>
+      <div class="via"><b>${n} of your ${picks.length} subject${picks.length>1?'s':''}</b> build towards this persona (${pts} curriculum point${pts>1?'s':''}):</div><ul class="msl">`;
+    picks.filter(s=>V[s][p]>0).forEach(s=>{const k=s+'|'+p,codes=(L[k]||[]).flatMap(m=>m.codes);
+      h+=`<li><b>${esc(DN(s))}</b> <span class="muted" style="color:var(--muted)">${codes.map(c=>`<span class="code">${esc(c)}</span>`).join('')}</span><br><span style="color:var(--muted)">Project you might have worked on:</span> ${esc(PROJ[k]||'')}</li>`;});
+    h+=`</ul><p style="margin:4px 0 0"><button class="btn" type="button" data-mcard="${p}">Open ${esc(a.name)} card</button></p></article>`;});
+  out.innerHTML=h+'</div>';
+  out.querySelectorAll('[data-mcard]').forEach(b=>b.addEventListener('click',()=>{showTab('avatars',true);window.openPersonaCard(+b.dataset.mcard);}));
+  $('msToMatrix').addEventListener('click',()=>{sel=new Set(top.map(x=>x.p));warn='';cur=null;render();setMV('subject');window.scrollTo({top:0});});
+}
+render();renderPP();renderMS();setMV('mine');
+})();
+
+showTab(location.hash.slice(1));
+</script>
+</body>
+</html>
